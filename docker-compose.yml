@@ -1,0 +1,30 @@
+version: '4.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1
+      - DB_NAME=todo_db
+      - DB_USER=todo_user
+      - DB_PASSWORD=todo_pass
+      - DB_HOST=db
+      - DB_PORT=5432
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: todo_db
+      POSTGRES_USER: todo_user
+      POSTGRES_PASSWORD: todo_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
