@@ -57,3 +57,33 @@ docs/_build/
 target/
 
 .DS_Store
+
+# Local .terraform directories
+.terraform/
+
+# Terraform plan files
+*.tfplan
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Override files (used to override variables locally)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable definition files
+terraform.tfvars
+terraform.tfvars.json
+
+# Lock file (optional to ignore if you want to keep it tracked)
+.terraform.lock.hcl
+
+# VS Code settings (optional)
+.vscode/
+
